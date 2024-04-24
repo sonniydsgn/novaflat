@@ -1,0 +1,50 @@
+.page {
+	height: 100%;
+	font-family: var(--font-family);
+	font-size: var(--font-primary);
+	line-height: var(--lh-primary);
+	color: var(--clr-text);
+	background-color: var(--clr-bg);
+}
+
+.page__body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100%;
+}
+
+.container {
+	width: min(var(--content-width), 100% - calc(var(--container-offset) * 2));
+	margin-inline: auto;
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+	fill: currentcolor;
+	transition:
+		color var(--tr-primary) ease,
+		opacity var(--tr-primary) ease,
+		transform var(--tr-primary) ease;
+	pointer-events: none;
+
+	&.icon--16 {
+		width: 16px;
+		height: 16px;
+	}
+}

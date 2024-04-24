@@ -1,0 +1,13 @@
+---
+const { class: className, ...rest } = Astro.props
+---
+
+<section class:list={['section', className]} {...rest}>
+	<slot />
+</section>
+
+<style is:global>
+	.section {
+		display: flex;
+	}
+</style>

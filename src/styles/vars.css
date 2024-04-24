@@ -1,0 +1,22 @@
+:root {
+	/* base */
+	--font-family: 'Inter', system-ui, sans-serif;
+	--content-width: 1170px;
+	--container-offset: 15px;
+
+	/* line-height */
+	--lh-primary: 1;
+
+	/* fonts */
+	--font-primary: 16px;
+
+	/* colors */
+	--clr-bg: #fff;
+	--clr-text: #2b2b2b;
+
+	/* radiuses */
+	--br-primary: 12px;
+
+	/* transitions */
+	--tr-default: 0.2s ease;
+}

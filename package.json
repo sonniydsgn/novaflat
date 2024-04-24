@@ -1,0 +1,53 @@
+{
+	"name": "astro-starter",
+	"type": "module",
+	"version": "1.0.0",
+	"browserslist": {
+		"production": [
+			"chrome >= 87",
+			"safari >= 14.1",
+			"firefox >= 98"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"dev:host": "astro dev --host",
+		"build": "astro build",
+		"preview": "astro preview",
+		"preview:host": "astro preview --host",
+		"deploy": "vercel --prod",
+		"test": "node-w3c-validator -f lint -evH -i dist/**/*.html"
+	},
+	"dependencies": {
+		"astro": "^4.6.3",
+		"@playform/compress": "^0.0.3",
+		"astro-icon": "^1.1.0"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "^7.7.0",
+		"astro-eslint-parser": "^0.17.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-astro": "^0.34.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-simple-import-sort": "^12.1.0",
+		"postcss-html": "^1.6.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-astro": "^0.13.0",
+		"sharp": "^0.33.3",
+		"stylelint": "^16.3.1",
+		"stylelint-config-html": "^1.1.0",
+		"stylelint-config-standard": "^36.0.0",
+		"stylelint-order": "^6.0.4",
+		"stylelint-prettier": "^5.0.0",
+		"svgo": "^3.2.0"
+	}
+}

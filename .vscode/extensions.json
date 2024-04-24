@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"astro-build.astro-vscode",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"stylelint.vscode-stylelint",
+		"edwinhuish.better-comments-next",
+		"jacobcassidy.css-nesting-syntax-highlighting",
+		"DavidAnson.vscode-markdownlint"
+	],
+	"unwantedRecommendations": []
+}

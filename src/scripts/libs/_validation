@@ -1,0 +1,107 @@
+// документация
+// https://just-validate.dev/docs/intro
+// https://github.com/RobinHerbots/Inputmask
+
+import Inputmask from 'inputmask'
+import JustValidate from 'just-validate'
+
+//? функция валидации
+const validateForms = (selector, rules, afterSend) => {
+	const form = document.querySelector(selector)
+	const telSelector = form.querySelector('input[type="tel"]')
+
+	if (!form) {
+		console.error('Нет такого селектора!')
+		return false
+	}
+
+	if (!rules) {
+		console.error('Вы не передали правила валидации!')
+		return false
+	}
+
+	if (telSelector) {
+		const inputMask = new Inputmask('+7 (999) 999-99-99')
+		inputMask.mask(telSelector)
+
+		for (const item of rules) {
+			if (item.tel) {
+				item.rules.push({
+					rule: 'function',
+					validator: function () {
+						const phone = telSelector.inputmask.unmaskedvalue()
+						return phone.length === 10
+					},
+					errorMessage: item.telError,
+				})
+			}
+		}
+	}
+
+	const validation = new JustValidate(selector)
+
+	for (const item of rules) {
+		validation.addField(item.ruleSelector, item.rules)
+	}
+
+	validation.onSuccess(ev => {
+		const formData = new FormData(ev.target)
+
+		const xhr = new XMLHttpRequest()
+
+		xhr.onreadystatechange = () => {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200) {
+					if (afterSend) {
+						afterSend()
+					}
+					console.log('Отправлено')
+				}
+			}
+		}
+
+		xhr.open('POST', 'mail.php', true)
+		xhr.send(formData)
+
+		ev.target.reset()
+	})
+}
+
+//? правила валидации
+const rules1 = [
+	{
+		ruleSelector: '#name',
+		rules: [
+			{
+				rule: 'maxLength',
+				value: 30,
+				errorMessage: 'Пожалуйста, укажите более короткий вариант имени, до 30 символов',
+			},
+			{
+				rule: 'required',
+				value: true,
+				errorMessage: 'Пожалуйста, укажите имя',
+			},
+		],
+	},
+	{
+		ruleSelector: '#tel',
+		tel: true,
+		telError: 'Недопустимый формат номера',
+		rules: [
+			{
+				rule: 'required',
+				value: true,
+				errorMessage: 'Пожалуйста, укажите номер телефона',
+			},
+		],
+	},
+]
+
+//? функция при успешной отправки
+const success = () => {
+	console.log('send')
+}
+
+//? вызов валидации
+validateForms('', rules1, success)

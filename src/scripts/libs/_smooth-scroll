@@ -1,0 +1,25 @@
+// документация
+// https://github.com/studio-freight/lenis
+
+import Lenis from '@studio-freight/lenis'
+export const lenis = new Lenis()
+
+function raf(time) {
+	lenis.raf(time)
+	requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', e => {
+		e.preventDefault()
+		const attr = this.getAttribute('href')
+
+		//? закрывать модальное окно при нажатии на ссылки навигации
+		// if (this.classList.contains('nav__link')) {
+		//   modal.close('nav')
+		// }
+
+		lenis.scrollTo(attr, { duration: 3 })
+	})
+})

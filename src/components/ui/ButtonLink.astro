@@ -1,0 +1,59 @@
+---
+import type { CallToAction } from 'src/types.d.ts'
+type Props = CallToAction
+
+const { tier, text, link = false, class: className, type = 'button', ...rest } = Astro.props
+---
+
+{
+	link ? (
+		<a href={link} class:list={['link', className]} {...rest}>
+			{text && <span>{text}</span>}
+		</a>
+	) : (
+		<button class:list={['btn-reset', 'btn', { ['btn--' + tier]: tier }, className]} {type} {...rest}>
+			{text && <span>{text}</span>}
+		</button>
+	)
+}
+
+<style is:global>
+	.btn-reset {
+		border: none;
+		padding: 0;
+		font-family: var(--font-family);
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		font-size: var(--font-sm);
+		line-height: var(--lh-sm);
+
+		/* transition:
+			background-color var(--tr-primary) ease,
+			opacity var(--tr-primary) ease,
+			transform var(--tr-primary) ease; */
+	}
+
+	/* .btn span {
+		transition:
+			color var(--tr-primary) ease,
+			opacity var(--tr-primary) ease;
+	} */
+
+	.btn:disabled {
+		cursor: not-allowed;
+	}
+
+	.btn:disabled > * {
+		opacity: 0.4;
+	}
+
+	/* .link {
+	} */
+</style>
