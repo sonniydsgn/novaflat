@@ -12,7 +12,7 @@ transport:
     distance: 18
     type: car
   point2:
-    name: Парк Галицкого
+    name: Парк "Краснодар"
     distance: 26
     type: car
   point3:
