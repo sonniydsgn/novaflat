@@ -1,6 +1,6 @@
 ---
 name: ЖК Сказка Град
-cover: './media/name_of_object/cover.jpg'
+cover: './media/skazka_grad/cover.jpg'
 address: Краснодар, ул. им. В. Н. Мачуги
 price:
   from: undefined
@@ -32,8 +32,8 @@ komnaty:
   - two
   - three
 gallery:
-  image: './media/name_of_object/gallery/images'
-  video: './media/name_of_object/gallery/videos'
+  image: './media/skazka_grad/gallery/images'
+  video: './media/skazka_grad/gallery/videos'
 remont:
   type1:
     name: Отделка
@@ -48,26 +48,26 @@ remont:
       - Оштукатуривание стен гипсовыми смесями
       - Классичесие европейские планировки
       - Индивидуальные счётчики горячего и холодного водоснабжения с функцией автоматической передачи показаний
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/skazka_grad/remont/type1.jpg'
 benefits:
   benefit1:
     name: Закрытый двор
     desc: Ландшафтный дизайн, Видеонаблюдение, Зона барбекю, Зоны отдыха для детей и взрослых, Фонтан «Жар-Птица», Прогулочный бульвар
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit1.jpg'
     favorite: true
   benefit2:
     name: Современные детские и спортивные площадки
     desc: Безопасное прорезиненное покрытие, игровые детские зоны для детей разных возрастов, спортивная площадка, экологически чистые материалы
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit1.jpg'
     favorite: true
   benefit3:
     name: Архитектурные решения
     desc: Для эффектного остекления домов и оформления панорамных лоджий используются стеклопакеты бренда Pilkington из серии Lifeglass Siver. Это мультифункциональное стекло, которое летом сохраняет прохладу, а зимой — тепло.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit1.jpg'
     favorite: true
   benefit4:
     name: Паркинг
     desc: 775 мест, удобный спуск на лифте в паркинг, надёжная защита от непогоды, автомобиль всегда рядом с вашим домом
-    image: './media/name_of_object/benefits/benefit1.jpg'
-    favorite: true
+    image: './media/skazka_grad/benefits/benefit1.jpg'
+    favorite: false
 ---

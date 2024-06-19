@@ -1,6 +1,6 @@
 ---
 name: ЖК Архитектор
-cover: './media/name_of_object/cover.jpg'
+cover: './media/arhitector/cover.jpg'
 address: Краснодар, ул. им. Алексея Кадочникова
 price:
   from: undefined
@@ -40,8 +40,8 @@ komnaty:
   - two
   - three
 gallery:
-  image: './media/name_of_object/gallery/images'
-  video: './media/name_of_object/gallery/videos'
+  image: './media/arhitector/gallery/images'
+  video: './media/arhitector/gallery/videos'
 remont:
   type1:
     name: Предчистовая отделка
@@ -51,46 +51,46 @@ remont:
       - Стяжка пола
       - Разводка всех необходимых коммуникаций
       - Прокладка труб горячего и холодного водоснабжения
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/arhitector/remont/type1.jpg'
 benefits:
   benefit1:
     name: Социальная инфраструктура
     desc: Ответственность и забота о людях - важнейшие принципы работы «ЮгСтройИнвест». В клубном квартале «Архитектор» появятся 2 детских сада с ясельными группами на 250 и 300 мест.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/arhitector/benefits/benefit1.jpg'
     favorite: true
   benefit2:
     name: Комфорт и безопасность
     desc: В клубном квартале «Архитектор» каждая деталь отвечает вашим требованиям к комфорту и безопасности. Территория квартала отделена от улицы. Все дворы огорожены, дополнительно за безопасность отвечает охрана - видеонаблюдение ведется в режиме 24/7. Можете быть уверены, в клубном квартале «Архитектор» никто не потревожит ваш покой.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/arhitector/benefits/benefit1.jpg'
     favorite: true
   benefit3:
     name: Приватная территория двора
     desc: На территории клубного квартала дворы организованы по принципу закрытых пространств. Доступ на огороженную территорию - только для жителей, двор круглосуточно находится под наблюдением
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/arhitector/benefits/benefit1.jpg'
     favorite: true
   benefit4:
     name: Современная архитектура
     desc: Клубный квартал создан по принципам современных европейских жилых комплексов — комфортная среда, визуальная эстетика, минимализм. Современные технологии вентфасадов позволят сохранять прохладу жарким летом и тепло зимой. А стильная подсветка по вечерам будет придавать зданиям особый шарм
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/arhitector/benefits/benefit1.jpg'
     favorite: true
   benefit5:
     name: Дизайнерские холлы
     desc: С первых шагов в дом вы получите приятные эмоции. Холлы с лаконичными интерьерами порадуют вас и ваших гостей. В каждом доме клубного квартала будет свой уникальный стиль входных групп, разработанный ведущими дизайнерами.
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    image: './media/arhitector/benefits/benefit2.jpg'
     favorite: false
   benefit6:
     name: Подземный паркинг
     desc: Собственное машиноместо подарит вам спокойствие. А круглосуточная охрана и видеонаблюдение обеспечат полную защиту и сохранность вашему автомобилю. В паркинг клубного квартала можно будет спуститься на лифте с любого этажа.
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    image: './media/arhitector/benefits/benefit2.jpg'
     favorite: false
   benefit7:
     name: Насыщенная жизнь рядом с домом
     desc: Посидеть с друзьями в кафе, расположенного в вашем доме или запланировать деловую встречу в непринужденной обстановке за чашечкой кофе. Пространство клубного квартала располагает к комфорту в любой жизненной ситуации.
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    image: './media/arhitector/benefits/benefit2.jpg'
     favorite: false
   benefit8:
     name: Легкая повседневность
     desc: Развитая инфраструктура избавит от забот. На территории квартала вы сможете прогуляться с друзьями по красивым улочкам, купить продукты в магазине у дома или сходить к парикмахеру. Клубный квартал — это место где все, что вам нужно, находится в шаговой доступности.
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    image: './media/arhitector/benefits/benefit2.jpg'
     favorite: false
 ---

@@ -1,6 +1,6 @@
 ---
 name: Микрорайон Родные Просторы
-cover: './media/name_of_object/cover.jpg'
+cover: './media/rodnye_prostory/cover.jpg'
 address: Краснодар, ул. Свободы
 price:
   from: undefined
@@ -41,8 +41,8 @@ komnaty:
   - three
   - four
 gallery:
-  image: './media/name_of_object/gallery/images'
-  video: './media/name_of_object/gallery/videos'
+  image: './media/rodnye_prostory/gallery/images'
+  video: './media/rodnye_prostory/gallery/videos'
 remont:
    type1:
     name: Предчистовая отделка
@@ -52,7 +52,7 @@ remont:
       - Стяжка пола
       - Разводка всех необходимых коммуникаций
       - Прокладка труб горячего и холодного водоснабжения
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/rodnye_prostory/remont/type1.jpg'
   type2:
     name: Ремонт, идущий в подарок
     desc: undefined
@@ -69,36 +69,31 @@ remont:
       - Акриловая ванна с экраном
       - Электрический полотенцесушитель с блоком управления
       - Вытяжной электровентилятор
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/rodnye_prostory/remont/type1.jpg'
 benefits:
   benefit1:
     name: Три детских сада
     desc: Индивидуальный дизайн, стильные яркие интерьеры и современное игровое и развивающее наполнение – таков подход компании к строительству детских садов. Наши сады понравятся и детям, и педагогам, и родителям.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/rodnye_prostory/benefits/benefit1.jpg'
     favorite: true
   benefit2:
     name: Современная школа на 1550 мест
     desc: Новая школа откроет свои двери в 2023 году. В каждом из 62 классов будет учиться по 25 учеников начальной, средней и старшей школы.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/rodnye_prostory/benefits/benefit1.jpg'
     favorite: true
   benefit3:
     name: Храм святых первоверховных апостолов Петра и Павла
     desc: Православный храм площадью 500 м^2 в двух уровнях
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/rodnye_prostory/benefits/benefit1.jpg'
     favorite: true
   benefit4:
     name: Медицина
     desc: Муниципальный медицинский комплекс площадью 5410 м^2, включающий в себя процедурные и диагностические кабинеты.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    image: './media/rodnye_prostory/benefits/benefit1.jpg'
     favorite: true
   benefit5:
     name: Дворы
     desc: Проектируя дворы, мы уделяем внимание всем жителям — и малышам, и детям постарше, и взрослым, и даже питомцам. Несколько уровней озеленения и освещения создают безопасное и уютное пространство, где каждый найдет себе занятие по душе. Двор удобно зонирован для детей, спорта, отдыха.
-    image: './media/name_of_object/benefits/benefit2.jpg'
-    favorite: false
-  benefit_:
-    name: Фитнес-клуб «Balance»
-    desc: Тренажеры от премиальных производителей, сезонные бассейны, детский фитнес, SPA-программы, групповые занятия, салон красоты 
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    image: './media/rodnye_prostory/benefits/benefit2.jpg'
     favorite: false
 ---

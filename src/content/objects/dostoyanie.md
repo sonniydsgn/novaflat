@@ -1,6 +1,6 @@
 ---
 name: ЖК Достояние
-cover: './media/name_of_object/cover.jpg'
+cover: './media/dostoyanie/cover.jpg'
 address: Краснодар, ул. Конгрессная, 31
 price:
   from: 5
@@ -40,8 +40,8 @@ komnaty:
   - two
   - three
 gallery:
-  image: './media/name_of_object/gallery/images'
-  video: './media/name_of_object/gallery/videos'
+  image: './media/dostoyanie/gallery/images'
+  video: './media/dostoyanie/gallery/videos'
 remont:
   type1:
     name: Предчистовая отделка
@@ -52,7 +52,7 @@ remont:
       - Полная электроразводка по всей квартире
       - Прокладка труб холодного и горячего водоснабжения
       - Французское остелкение
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/dostoyanie/remont/type1.jpg'
   type2:
     name: Квартира с ремонтом
     desc: Квартира с готовым ремонтом от застройщика — идеальный выбор для тех, кто хочет жить здесь и сейчас. Забудьте о нервах, лишних тратах денег и сил, а просто въезжайте в свою новую квартиру и наслаждайтесь красотой и комфортом. Выбрать нужно только цвет, стиль и комплектацию мебели. Об остальном мы позаботились. Есть 2 варианта на выбор - "Стандарт" и "Комфорт+". А также 2 сета мебели на выбор!
@@ -62,51 +62,46 @@ remont:
       - Качество работ - ремонт выполнен профессионалами, а значит он отличается высоким качеством и долговечностью;
       - Гарантии - на все работы мы даем гарантию 1 год;
       - Пассивных доход - квартиру с ремонтов можно сдавать в аренду сразу после получения ключей.
-    image: './media/name_of_object/remont/type2.jpg'
+    image: './media/dostoyanie/remont/type2.jpg'
 benefits:
   benefit1:
     name: Школа на 1550 мест
-    desc: С квалифицированными педагогами и отличными условиями для обучения.
-    image: './media/name_of_object/benefits/benefit1.jpg'
+    desc: С квалифицированными педагогами и отличными условиями для обучения
+    image: './media/dostoyanie/benefits/benefit1.jpg'
     favorite: true
   benefit2:
     name: 3 детских сада с ясельными группами
-    desc: Все для комфортного развития и укрепления здоровья ребенка.
-    image: './media/name_of_object/benefits/benefit2.jpg'
+    desc: Все для комфортного развития и укрепления здоровья ребенка
+    image: './media/dostoyanie/benefits/benefit2.jpg'
     favorite: true
   benefit3:
     name: 5 уникальных аллей
-    desc: Они раскинулись по всему микрорайону; предназначены для спокойных прогулок и отдыха.
-    image: './media/name_of_object/benefits/benefit3.jpg'
+    desc: Они раскинулись по всему микрорайону; предназначены для спокойных прогулок и отдыха
+    image: './media/dostoyanie/benefits/benefit3.jpg'
     favorite: true
   benefit4:
     name: Зона для выгула собак. 
     desc: Отличный повод лишний раз провести тренировку или просто погулять с четвероногим другом
-    image: './media/name_of_object/benefits/benefit4.jpg'
+    image: './media/dostoyanie/benefits/benefit4.jpg'
     favorite: true
   benefit5:
     name: Крытый спортивный комплекс
-    desc: Оснащен современным оборудованием для занятий спортом в любое время года. 
-    image: './media/name_of_object/benefits/benefit5.jpg'
+    desc: Оснащен современным оборудованием для занятий спортом в любое время года
+    image: './media/dostoyanie/benefits/benefit5.jpg'
     favorite: false
   benefit6:
     name: 1 гольф аллея
-    desc: Статусное украшение “Достояния”. Не нужно покупать абонемент в клуб и тратить время на дорогу - всё рядом с домом.
-    image: './media/name_of_object/benefits/benefit6.jpg'
+    desc: Статусное украшение “Достояния”. Не нужно покупать абонемент в клуб и тратить время на дорогу - всё рядом с домом
+    image: './media/dostoyanie/benefits/benefit6.jpg'
     favorite: false
   benefit7:
     name: 1 теннисный корт
     desc: Для любителей активного отдыха на свежем воздухе
-    image: './media/name_of_object/benefits/benefit7.jpg'
+    image: './media/dostoyanie/benefits/benefit7.jpg'
     favorite: false
   benefit8:
     name: 6 спортивных площадок
     desc: Такое количество мест для спорта позволяет уместится всем желающим позаниматься!
-    image: './media/name_of_object/benefits/benefit8.jpg'
-    favorite: false
-  benefit9:
-    name: Больше 200 коммерческих заведений
-    desc: На любой вкус и цвет!
-    image: './media/name_of_object/benefits/benefit9.jpg'
+    image: './media/dostoyanie/benefits/benefit8.jpg'
     favorite: false
 ---

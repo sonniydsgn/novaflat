@@ -1,3 +1,5 @@
+.gitignore
+
 # build output
 dist/
 dev-dist/
@@ -20,3 +22,7 @@ pnpm-debug.log*
 .DS_Store
 
 .vercel
+
+template.md
+compress_media.py
+nums.py
