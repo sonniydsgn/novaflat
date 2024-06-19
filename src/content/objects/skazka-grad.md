@@ -58,16 +58,16 @@ benefits:
   benefit2:
     name: Современные детские и спортивные площадки
     desc: Безопасное прорезиненное покрытие, игровые детские зоны для детей разных возрастов, спортивная площадка, экологически чистые материалы
-    image: './media/skazka_grad/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit2.jpg'
     favorite: true
   benefit3:
     name: Архитектурные решения
     desc: Для эффектного остекления домов и оформления панорамных лоджий используются стеклопакеты бренда Pilkington из серии Lifeglass Siver. Это мультифункциональное стекло, которое летом сохраняет прохладу, а зимой — тепло.
-    image: './media/skazka_grad/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit3.jpg'
     favorite: true
   benefit4:
     name: Паркинг
     desc: 775 мест, удобный спуск на лифте в паркинг, надёжная защита от непогоды, автомобиль всегда рядом с вашим домом
-    image: './media/skazka_grad/benefits/benefit1.jpg'
+    image: './media/skazka_grad/benefits/benefit4.jpg'
     favorite: false
 ---

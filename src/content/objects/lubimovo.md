@@ -81,7 +81,7 @@ remont:
     desc: Универсальный стиль в серой цветовой гамме визуально расширит пространство и наполнит его «воздухом»
     specifics:
       -
-    image: './media/name_of_object/remont/type1.jpg'
+    image: './media/name_of_object/remont/type2.jpg'
 benefits:
   benefit1:
     name: Школа и детские сады
