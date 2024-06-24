@@ -1,29 +1,40 @@
 ---
-import '@styles/fonts.css'
 import '@styles/reset.css'
+import '@styles/fonts.css'
 import '@styles/vars.css'
 import '@styles/settings.css'
 
 interface Props {
 	title: string
+	url?: string
 	description?: string
 	image?: string
 }
 
-const { title, description, image = '/images/preview.jpg' } = Astro.props
+const { title, description, url = Astro.url, image = '/images/preview.jpg' } = Astro.props
 ---
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="description" content={description} />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+	<!-- фавиконка -->
 	<link rel="icon" href="/favicon/favicon.ico" sizes="32x32" />
-	<link rel="icon" href="/favicon/favicon.svg" sizes="any" type="image/svg+xml" />
-	<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
-	<meta property="og:image" content={image} />
+	<link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+	<link rel="manifest" href="favicon/manifest.webmanifest" />
+	<!-- мета-данные -->
 	<title>{title}</title>
+	<meta property="og:site_name" content="агрегатор новостроек «НОВА ЮГ»" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={url} />
+	<meta property="og:image" content={image} />
+	<meta name="description" content={description} />
+	<!-- шрифты -->
+	<link rel="preload" href="/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="/fonts/GolosText-Medium.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="/fonts/Pangolin-Regular.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 
 <script>

@@ -6,11 +6,8 @@
 		"baseUrl": ".",
 		"noEmit": true,
 		"paths": {
-			"@components/*": ["src/components/*"],
-			"@layouts/*": ["src/layouts/*"],
-			"@assets/*": ["src/assets/*"],
-			"@styles/*": ["src/styles/*"],
-			"@scripts/*": ["src/scripts/*"],
+			"@/*": ["src/*"]
 		}
-	}
+	},
+	"exclude": ["node_modules"]
 }

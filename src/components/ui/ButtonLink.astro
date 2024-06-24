@@ -1,26 +1,47 @@
 ---
-import type { CallToAction } from 'src/types.d.ts'
-type Props = CallToAction
+import type { HTMLAttributes } from 'astro/types'
 
-const { tier, text, link = false, class: className, type = 'button', ...rest } = Astro.props
+interface Props extends HTMLAttributes<'button'> {
+	tier?: 'accent' | 'primary' | 'secondary' | 'tertiary'
+	theme?: 'light' | 'dark'
+	class?: string | undefined | null
+	link?: string
+	// modalTrigger?: '' | null
+	// modalClose?: boolean | null
+}
+
+const { tier, link = false, theme = 'dark', class: className, type = 'button', ...rest } = Astro.props
 ---
 
 {
 	link ? (
-		<a href={link} class:list={['link', className]} {...rest}>
-			{text && <span>{text}</span>}
+		<a href={link} class:list={['link-reset', 'btn', { ['btn--' + tier]: tier }, className]} {...rest}>
+			<slot />
 		</a>
 	) : (
-		<button class:list={['btn-reset', 'btn', { ['btn--' + tier]: tier }, className]} {type} {...rest}>
-			{text && <span>{text}</span>}
+		<button
+			class:list={[
+				'btn-reset',
+				'btn',
+				{ ['btn--' + tier]: tier },
+				{ ['btn--' + theme]: tier === 'primary' },
+				className,
+			]}
+			{type}
+			{...rest}
+		>
+			<slot />
 		</button>
 	)
 }
 
 <style is:global>
+	.link-reset {
+		text-decoration: none;
+	}
+
 	.btn-reset {
 		border: none;
-		padding: 0;
 		font-family: var(--font-family);
 		background-color: transparent;
 		cursor: pointer;
@@ -33,18 +54,10 @@ const { tier, text, link = false, class: className, type = 'button', ...rest } =
 		font-weight: 600;
 		font-size: var(--font-sm);
 		line-height: var(--lh-sm);
-
-		/* transition:
-			background-color var(--tr-primary) ease,
-			opacity var(--tr-primary) ease,
-			transform var(--tr-primary) ease; */
-	}
-
-	/* .btn span {
 		transition:
-			color var(--tr-primary) ease,
-			opacity var(--tr-primary) ease;
-	} */
+			background-color var(--tr-primary) ease,
+			transform var(--tr-primary) ease;
+	}
 
 	.btn:disabled {
 		cursor: not-allowed;
@@ -53,7 +66,4 @@ const { tier, text, link = false, class: className, type = 'button', ...rest } =
 	.btn:disabled > * {
 		opacity: 0.4;
 	}
-
-	/* .link {
-	} */
 </style>

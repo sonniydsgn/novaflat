@@ -1,21 +1,115 @@
 :root {
 	/* base */
-	--font-family: 'Inter', system-ui, sans-serif;
-	--content-width: 1170px;
-	--container-offset: 15px;
+	--ff-primary: 'Golos Text', system-ui, sans-serif;
+	--ff-accent: 'Pangolin', 'Comic Sans MS', 'Comic Sans', cursive;
+	--content-width: 1244px;
+	--container-offset: 20px;
+	--grid-columns: 12px;
+	--grid-gap: 16px;
 
 	/* line-height */
-	--lh-primary: 1;
+	--lh-primary: 1.4;
+	--lh-sm: 1.2;
+	--lh-xs: 1;
 
 	/* fonts */
+	--font-lg: 24px;
+	--font-md: 21px;
 	--font-primary: 16px;
+	--font-sm: 16px;
+	--font-xs: 14px;
 
 	/* colors */
-	--clr-bg: #fff;
-	--clr-text: #2b2b2b;
+
+	/* primitives */
+	--clr-white: rgb(255 255 255);
+	--clr-dark-green-300: rgb(58 61 51);
+	--clr-dark-green-600: rgb(146 169 92);
+	--clr-dark-green-900: rgb(213 252 123);
+	--clr-light-blue-100: rgb(210 226 244);
+	--clr-light-gray-200: rgb(191 191 191);
+	--clr-light-gray-300: rgb(166 166 166);
+	--clr-light-gray-400: rgb(135 135 135);
+	--clr-light-gray-50: rgb(229 229 229);
+	--clr-light-gray-600: rgb(86 86 86);
+	--clr-light-gray-700: rgb(68 68 68);
+	--clr-light-gray-800: rgb(45 45 45);
+	--clr-light-gray-900: rgb(31 31 31);
+	--clr-light-green-100: rgb(218 240 172);
+	--clr-light-green-200: rgb(202 235 135);
+	--clr-light-green-300: rgb(173 217 86);
+	--clr-light-green-50: rgb(238 240 233);
+	--clr-light-green-500: rgb(132 181 35);
+	--clr-light-green-700: rgb(94 128 25);
+	--clr-light-red-200: rgb(201 69 69);
+	--clr-light-rose-100: rgb(233 210 244);
+	--clr-light-yellow-10: rgb(248 248 245);
+	--clr-light-yellow-100: rgb(229 229 219);
+	--clr-light-yellow-200: rgb(217 217 202);
+	--clr-light-yellow-50: rgb(242 242 237);
+	--clr-light-yellow-500: rgb(128 128 122);
+
+	/* tokens */
+	--clr-bg-accent-100: var(--clr-dark-green-900);
+	--clr-bg-accent-200: var(--clr-light-green-500);
+	--clr-bg-accent-300: var(--clr-light-green-700);
+	--clr-bg-primary-100: var(--clr-white);
+	--clr-bg-primary-200: var(--clr-light-yellow-10);
+	--clr-bg-primary-300: var(--clr-light-gray-800);
+	--clr-bg-secondary-100: var(--clr-light-yellow-50);
+	--clr-bg-secondary-200: var(--clr-light-gray-50);
+	--clr-bg-tertiary-100: var(--clr-light-yellow-100);
+	--clr-bg-tertiary-200: var(--clr-light-yellow-200);
+	--clr-bg-tertiary-300: var(--clr-light-yellow-500);
+	--clr-bg-tertiary-400: var(--clr-light-gray-900);
+	--clr-border-accent: var(--clr-light-green-500);
+	--clr-border-error: var(--clr-light-red-200);
+	--clr-border-primary: var(--clr-light-gray-200);
+	--clr-text-accent-100: var(--clr-dark-green-900);
+	--clr-text-accent-200: var(--clr-light-green-500);
+	--clr-text-error: var(--clr-light-red-200);
+	--clr-text-primary-100: var(--clr-white);
+	--clr-text-primary-200: var(--clr-light-gray-800);
+	--clr-text-secondary: var(--clr-light-gray-600);
+	--clr-text-tertiary: var(--clr-light-gray-300);
+
+	/* alises */
+	--clr-button-accent-bg-default: var(--clr-bg-accent-200);
+	--clr-button-accent-bg-hover: var(--clr-bg-accent-300);
+	--clr-button-accent-text: var(--clr-text-primary-100);
+	--clr-button-primary-dark-bg-default: var(--clr-bg-primary-300);
+	--clr-button-primary-dark-bg-hover: var(--clr-bg-tertiary-400);
+	--clr-button-primary-dark-text: var(--clr-text-primary-100);
+	--clr-button-primary-light-bg-default: var(--clr-bg-primary-200);
+	--clr-button-primary-light-bg-hover: var(--clr-bg-secondary-100);
+	--clr-button-primary-light-text: var(--clr-text-primary-200);
+	--clr-button-secondary-bg-default: var(--clr-bg-tertiary-100);
+	--clr-button-secondary-bg-hover: var(--clr-bg-tertiary-200);
+	--clr-button-secondary-text: var(--clr-text-primary-200);
+	--clr-button-tertiary-bg-active: var(--clr-bg-tertiary-300);
+	--clr-button-tertiary-bg-default: var(--clr-bg-primary-100);
+	--clr-button-tertiary-bg-hover: var(--clr-bg-secondary-200);
+	--clr-button-tertiary-border-active: var(--clr-bg-tertiary-300);
+	--clr-button-tertiary-border-default: var(--clr-border-primary);
+	--clr-button-tertiary-border-hover: var(--clr-bg-secondary-200);
+	--clr-button-tertiary-text-active: var(--clr-text-primary-100);
+	--clr-button-tertiary-text-default: var(--clr-text-primary-200);
+	--clr-input-atom: var(--clr-text-secondary);
+	--clr-input-bg: var(--clr-bg-primary-100);
+	--clr-input-border-default: var(--clr-border-primary);
+	--clr-input-border-errored: var(--clr-border-error);
+	--clr-input-border-focused: var(--clr-border-accent);
+	--clr-input-placeholder: var(--clr-text-tertiary);
+	--clr-input-text: var(--clr-text-primary-200);
 
 	/* radiuses */
-	--br-primary: 12px;
+	--br-lg: 24px;
+	--br-primary: 16px;
+	--br-sm: 8px;
+
+	/* shadows */
+	--shadow-sm: 0px 2px 16px rgb(120 120 84 / 10%);
+	--shadow-md: 0px 2px 4px rgba(45 45 45 / 20%);
 
 	/* transitions */
 	--tr-default: 0.2s ease;

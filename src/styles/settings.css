@@ -1,10 +1,10 @@
 .page {
 	height: 100%;
-	font-family: var(--font-family);
+	font-family: var(--ff-primary);
 	font-size: var(--font-primary);
 	line-height: var(--lh-primary);
-	color: var(--clr-text);
-	background-color: var(--clr-bg);
+	color: var(--clr-text-primary-200);
+	background-color: var(--clr-bg-primary-200);
 }
 
 .page__body {
@@ -16,6 +16,115 @@
 .container {
 	width: min(var(--content-width), 100% - calc(var(--container-offset) * 2));
 	margin-inline: auto;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
+	gap: var(--grid-gap);
+}
+
+/* заголовки */
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4 {
+	font-weight: 500;
+	color: var(--clr-text-primary-200);
+	text-wrap: balance;
+}
+
+.text-h1 {
+	font-size: 80px;
+	line-height: 0.9;
+	letter-spacing: -0.04em;
+
+	&.text-h1--accent {
+		font-family: var(--ff-accent);
+		font-weight: 400;
+		letter-spacing: -0.03em;
+		color: var(--clr-text-accent-200);
+
+		@media (width <= 768) {
+			letter-spacing: -0.02em;
+		}
+	}
+
+	@media (width <= 768) {
+		font-size: 36px;
+		letter-spacing: -0.03em;
+	}
+}
+
+.text-h2 {
+	font-size: 72px;
+	line-height: 0.9;
+	letter-spacing: -0.03em;
+
+	&.text-h2--accent {
+		font-family: var(--ff-accent);
+		font-weight: 400;
+		letter-spacing: -0.02em;
+		color: var(--clr-text-accent-200);
+	}
+
+	@media (width <= 768) {
+		font-size: 26px;
+	}
+}
+
+.text-h3 {
+	font-size: 24px;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+
+	@media (width <= 768) {
+		font-size: 20px;
+		letter-spacing: -0.01em;
+	}
+}
+
+.text-h4 {
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+
+	@media (width <= 768) {
+		font-size: 16px;
+	}
+}
+
+.text-subtitle {
+	font-size: var(--font-md);
+	color: var(--clr-text-secondary);
+
+	@media (width <= 768) {
+		font-size: var(--font-primary);
+	}
+}
+
+/* иконка */
+.icon {
+	width: 24px;
+	height: 24px;
+	fill: currentcolor;
+	transition:
+		color var(--tr-primary) ease,
+		opacity var(--tr-primary) ease,
+		transform var(--tr-primary) ease;
+	pointer-events: none;
+
+	&.icon--16 {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+/* вспомогательные стили */
+.list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .is-hidden {
@@ -31,20 +140,4 @@
 	width: 1px;
 	height: 1px;
 	clip: rect(0 0 0 0);
-}
-
-.icon {
-	width: 24px;
-	height: 24px;
-	fill: currentcolor;
-	transition:
-		color var(--tr-primary) ease,
-		opacity var(--tr-primary) ease,
-		transform var(--tr-primary) ease;
-	pointer-events: none;
-
-	&.icon--16 {
-		width: 16px;
-		height: 16px;
-	}
 }

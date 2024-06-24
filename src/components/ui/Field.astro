@@ -1,0 +1,158 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'input'> {
+	name: 'string'
+	id: 'string'
+	class?: 'string'
+	placeholder?: 'string'
+}
+
+const { class: className, name, id, placeholder, type = 'text', ...rest } = Astro.props
+---
+
+{
+	type === 'radio' ? (
+		<>
+			<input class="visually-hidden" type="radio" {name} {id} data-validate-field={id} {...rest} />
+			<span class="form-field__text">{placeholder}</span>
+		</>
+	) : (
+		<input
+			class:list={['input-reset', className]}
+			{placeholder}
+			{type}
+			{name}
+			{id}
+			data-validate-field={id}
+			{...rest}
+		/>
+	)
+}
+
+<style is:global>
+	.input-reset {
+		appearance: none;
+		border: none;
+		border-radius: 0;
+		background-color: #fff;
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	.form-field {
+		position: relative;
+		display: grid;
+		align-items: center;
+		row-gap: 4px;
+
+		input,
+		textarea {
+			width: 100%;
+
+			&::placeholder {
+				color: var(--clr-text);
+				opacity: 0.7;
+			}
+		}
+	}
+
+	/* поля ввода */
+	.form-field__input {
+		padding: 18px 20px 18px 60px;
+	}
+
+	.form-field__textarea {
+		padding: 18px 20px;
+		min-height: 100px;
+		resize: none;
+	}
+
+	.form-field__input,
+	.form-field__textarea {
+		border: 1px solid transparent;
+		border-radius: var(--br-sm);
+		font-weight: 400;
+		font-size: var(--font-md);
+		line-height: var(--lh-sm);
+		color: var(--clr-text);
+		background: var(--clr-gray-100);
+		transition: border-color var(--tr-primary);
+
+		&:not(:disabled):hover,
+		&:not(:disabled):focus {
+			border-color: var(--clr-gray-30);
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+
+		@media (width <= 768) {
+			font-size: var(--font-primary);
+		}
+	}
+
+	/* радио-кнопка */
+	.form-field--radio {
+		input:checked + .form-field__text::after {
+			opacity: 1;
+		}
+
+		input:checked + .form-field__text::before {
+			border-color: var(--clr-primary);
+		}
+
+		.form-field__text {
+			position: relative;
+			display: flex;
+			align-items: center;
+			cursor: default;
+
+			&::before {
+				content: '';
+				margin-right: 12px;
+				border: 1px solid var(--clr-gray-30);
+				border-radius: 100%;
+				width: 22px;
+				height: 22px;
+				background-color: var(--clr-white);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 4px;
+				border-radius: 100%;
+				width: 14px;
+				height: 14px;
+				background-color: var(--clr-primary);
+				opacity: 0;
+			}
+		}
+	}
+
+	/* остальное */
+	.form-field__text {
+		font-weight: 400;
+		font-size: var(--font-primary);
+		line-height: var(--lh-sm);
+		color: var(--clr-text);
+	}
+
+	.form-field__icon {
+		position: absolute;
+		left: 20px;
+		grid-row: 1 / 2;
+		color: var(--clr-gray-10);
+	}
+
+	.form-field__error {
+		grid-row: 2 / 3;
+	}
+</style>

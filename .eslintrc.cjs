@@ -17,8 +17,9 @@ module.exports = {
 		'import/order': 'off',
 		'no-var': 'error',
 		'prefer-const': 'warn',
-		'func-names': ['warn', 'as-needed'],
+		'func-names': 'off',
 		'import/no-extraneous-dependencies': 'off',
+		'import/no-unresolved': 'off',
 	},
 	overrides: [
 		{
@@ -28,9 +29,10 @@ module.exports = {
 				parser: '@typescript-eslint/parser',
 				extraFileExtensions: ['.astro'],
 			},
-			rules: {
-				'import/no-unresolved': 'off',
-			},
+		},
+		{
+			files: ['**/*.astro/*.js', '*.astro/*.js'],
+			parser: '@typescript-eslint/parser',
 		},
 	],
 }
