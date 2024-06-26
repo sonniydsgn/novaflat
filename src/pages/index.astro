@@ -1,23 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-
-import Preview from '@/assets/preview.jpg'
-import Section from '@/components/ui/Section.astro'
+import Hero from '@/components/sections/Hero.astro'
 import MainLayout from '@/layouts/MainLayout.astro'
 ---
 
-<MainLayout title="sonniy's Astro Starter">
-	<Section>
-		<div class="container">
-			<h1>Тестовый текст</h1>
-			<Image src={Preview} alt="Обложка" loading="eager" />
-		</div>
-	</Section>
+<MainLayout title="НОВА ЮГ — Агрегатор новостроек">
+	<Hero />
 </MainLayout>
-
-<style>
-	h1 {
-		font-size: 32px;
-		color: darkgoldenrod;
-	}
-</style>
