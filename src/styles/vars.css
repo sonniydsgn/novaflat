@@ -15,7 +15,7 @@
 	/* fonts */
 	--font-lg: 24px;
 	--font-md: 21px;
-	--font-primary: 16px;
+	--font-primary: 18px;
 	--font-sm: 16px;
 	--font-xs: 14px;
 
@@ -61,10 +61,12 @@
 	--clr-bg-tertiary-100: var(--clr-light-yellow-100);
 	--clr-bg-tertiary-200: var(--clr-light-yellow-200);
 	--clr-bg-tertiary-300: var(--clr-light-yellow-500);
-	--clr-bg-tertiary-400: var(--clr-light-gray-900);
+	--clr-bg-tertiary-400: var(--clr-light-gray-600);
+	--clr-bg-tertiary-500: var(--clr-light-gray-900);
 	--clr-border-accent: var(--clr-light-green-500);
 	--clr-border-error: var(--clr-light-red-200);
-	--clr-border-primary: var(--clr-light-gray-200);
+	--clr-border-primary-100: var(--clr-light-gray-200);
+	--clr-border-primary-200: var(--clr-light-yellow-500);
 	--clr-text-accent-100: var(--clr-dark-green-900);
 	--clr-text-accent-200: var(--clr-light-green-500);
 	--clr-text-error: var(--clr-light-red-200);
@@ -78,29 +80,32 @@
 	--clr-button-accent-bg-hover: var(--clr-bg-accent-300);
 	--clr-button-accent-text: var(--clr-text-primary-100);
 	--clr-button-primary-dark-bg-default: var(--clr-bg-primary-300);
-	--clr-button-primary-dark-bg-hover: var(--clr-bg-tertiary-400);
+	--clr-button-primary-dark-bg-hover: var(--clr-bg-tertiary-500);
 	--clr-button-primary-dark-text: var(--clr-text-primary-100);
 	--clr-button-primary-light-bg-default: var(--clr-bg-primary-200);
-	--clr-button-primary-light-bg-hover: var(--clr-bg-secondary-100);
+	--clr-button-primary-light-bg-hover: var(--clr-bg-tertiary-100);
 	--clr-button-primary-light-text: var(--clr-text-primary-200);
 	--clr-button-secondary-bg-default: var(--clr-bg-tertiary-100);
 	--clr-button-secondary-bg-hover: var(--clr-bg-tertiary-200);
 	--clr-button-secondary-text: var(--clr-text-primary-200);
-	--clr-button-tertiary-bg-active: var(--clr-bg-tertiary-300);
-	--clr-button-tertiary-bg-default: var(--clr-bg-primary-100);
-	--clr-button-tertiary-bg-hover: var(--clr-bg-secondary-200);
-	--clr-button-tertiary-border-active: var(--clr-bg-tertiary-300);
-	--clr-button-tertiary-border-default: var(--clr-border-primary);
-	--clr-button-tertiary-border-hover: var(--clr-bg-secondary-200);
-	--clr-button-tertiary-text-active: var(--clr-text-primary-100);
-	--clr-button-tertiary-text-default: var(--clr-text-primary-200);
-	--clr-input-atom: var(--clr-text-secondary);
-	--clr-input-bg: var(--clr-bg-primary-100);
-	--clr-input-border-default: var(--clr-border-primary);
-	--clr-input-border-errored: var(--clr-border-error);
-	--clr-input-border-focused: var(--clr-border-accent);
-	--clr-input-placeholder: var(--clr-text-tertiary);
-	--clr-input-text: var(--clr-text-primary-200);
+	--clr-checkbox-button-bg-default: var(--clr-bg-primary-100);
+	--clr-checkbox-button-bg-selected: var(--clr-bg-tertiary-300);
+	--clr-checkbox-button-border-default: var(--clr-border-primary-100);
+	--clr-checkbox-button-border-focused: var(--clr-border-accent);
+	--clr-checkbox-button-border-selected: var(--clr-border-primary-200);
+	--clr-checkbox-button-text-default: var(--clr-text-primary-200);
+	--clr-checkbox-button-text-selected: var(--clr-text-primary-100);
+	--clr-field-atom: var(--clr-text-secondary);
+	--clr-field-bg: var(--clr-bg-primary-100);
+	--clr-field-border-default: var(--clr-border-primary-100);
+	--clr-field-border-errored: var(--clr-border-error);
+	--clr-field-border-focused: var(--clr-border-accent);
+	--clr-field-placeholder: var(--clr-text-tertiary);
+	--clr-field-text: var(--clr-text-primary-200);
+	--clr-radio-bg: var(--clr-bg-primary-100);
+	--clr-radio-border-default: var(--clr-border-primary-100);
+	--clr-radio-border-focused: var(--clr-border-accent);
+	--clr-radio-text: var(--clr-text-primary-200);
 
 	/* radiuses */
 	--br-lg: 24px;
@@ -112,5 +117,5 @@
 	--shadow-md: 0px 2px 4px rgba(45 45 45 / 20%);
 
 	/* transitions */
-	--tr-default: 0.2s ease;
+	--tr-primary: 0.2s ease;
 }

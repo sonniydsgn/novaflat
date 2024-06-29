@@ -5,6 +5,7 @@
 		"allowJs": true,
 		"baseUrl": ".",
 		"noEmit": true,
+		"types": ["unplugin-icons/types/astro"],
 		"paths": {
 			"@/*": ["src/*"]
 		}

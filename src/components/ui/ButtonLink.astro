@@ -2,20 +2,25 @@
 import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'button'> {
-	tier?: 'accent' | 'primary' | 'secondary' | 'tertiary'
+	tier: 'accent' | 'primary' | 'secondary' | 'tertiary'
 	theme?: 'light' | 'dark'
 	class?: string | undefined | null
 	link?: string
+	size?: 'small' | 'default'
 	// modalTrigger?: '' | null
 	// modalClose?: boolean | null
 }
 
-const { tier, link = false, theme = 'dark', class: className, type = 'button', ...rest } = Astro.props
+const { tier, link = false, theme = 'dark', size = 'default', class: className, type = 'button', ...rest } = Astro.props
 ---
 
 {
 	link ? (
-		<a href={link} class:list={['link-reset', 'btn', { ['btn--' + tier]: tier }, className]} {...rest}>
+		<a
+			href={link}
+			class:list={['link-reset', 'btn', { ['btn--' + tier]: tier }, { ['btn--' + size]: size != 'default' }, className]}
+			{...rest}
+		>
 			<slot />
 		</a>
 	) : (
@@ -25,6 +30,7 @@ const { tier, link = false, theme = 'dark', class: className, type = 'button', .
 				'btn',
 				{ ['btn--' + tier]: tier },
 				{ ['btn--' + theme]: tier === 'primary' },
+				{ ['btn--' + size]: size != 'default' },
 				className,
 			]}
 			{type}
@@ -42,21 +48,26 @@ const { tier, link = false, theme = 'dark', class: className, type = 'button', .
 
 	.btn-reset {
 		border: none;
-		font-family: var(--font-family);
+		font-family: var(--ff-primary);
 		background-color: transparent;
 		cursor: pointer;
 	}
 
 	.btn {
+		--scale-ratio: 0.95;
+
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		font-weight: 600;
-		font-size: var(--font-sm);
-		line-height: var(--lh-sm);
+		font-weight: 500;
+		font-size: var(--font-primary);
+		line-height: var(--lh-xs);
 		transition:
-			background-color var(--tr-primary) ease,
-			transform var(--tr-primary) ease;
+			color var(--tr-primary),
+			background-color var(--tr-primary),
+			border-color var(--tr-primary),
+			transform var(--tr-primary);
+		gap: 8px;
 	}
 
 	.btn:disabled {
@@ -65,5 +76,91 @@ const { tier, link = false, theme = 'dark', class: className, type = 'button', .
 
 	.btn:disabled > * {
 		opacity: 0.4;
+	}
+
+	/* акцентная кнопка */
+	.btn--accent {
+		color: var(--clr-button-accent-text);
+		background-color: var(--clr-button-accent-bg-default);
+		padding-block: 24px;
+		padding-inline: 32px;
+
+		&:not(:disabled):hover {
+			@media (hover: hover) {
+				background-color: var(--clr-button-accent-bg-hover);
+			}
+		}
+
+		&:not(:disabled):active {
+			transform: scale(var(--scale-ratio));
+		}
+	}
+
+	.btn--accent.btn--small {
+		font-size: var(--font-sm);
+		padding-block: 16px;
+		padding-inline: 24px;
+	}
+
+	/* основная кнопка */
+	.btn--primary {
+		padding-block: 24px;
+		padding-inline: 32px;
+
+		&:not(:disabled):active {
+			transform: scale(var(--scale-ratio));
+		}
+	}
+
+	.btn--primary.btn--dark {
+		outline-color: var(--clr-bg-accent-200);
+		color: var(--clr-button-primary-dark-text);
+		background-color: var(--clr-button-primary-dark-bg-default);
+
+		&:not(:disabled):hover {
+			@media (hover: hover) {
+				background-color: var(--clr-button-primary-dark-bg-hover);
+			}
+		}
+	}
+
+	.btn--primary.btn--light {
+		color: var(--clr-button-primary-light-text);
+		background-color: var(--clr-button-primary-light-bg-default);
+
+		&:not(:disabled):hover {
+			@media (hover: hover) {
+				background-color: var(--clr-button-primary-light-bg-hover);
+			}
+		}
+	}
+
+	.btn--primary.btn--small {
+		font-size: var(--font-sm);
+		padding-block: 16px;
+		padding-inline: 24px;
+	}
+
+	/* второстепенная кнопка */
+	.btn--secondary {
+		border-radius: 100px;
+		color: var(--clr-button-secondary-text);
+		background-color: var(--clr-button-secondary-bg-default);
+		padding-block: 12px;
+		padding-inline: 18px;
+
+		&:not(:disabled):hover {
+			@media (hover: hover) {
+				background-color: var(--clr-button-secondary-bg-hover);
+			}
+		}
+
+		&:not(:disabled):active {
+			transform: scale(var(--scale-ratio));
+		}
+	}
+
+	.btn--secondary.btn--small {
+		font-size: var(--font-sm);
 	}
 </style>

@@ -3,20 +3,31 @@ import { Image } from 'astro:assets'
 
 import Preview from '@/assets/preview.jpg'
 import HeroAnimation from '@/components/animations/HeroAnimation.astro'
+import ButtonLink from '@/components/ui/ButtonLink.astro'
+import Field from '@/components/ui/Field.astro'
 import Section from '@/components/ui/Section.astro'
+import MenuIcon from '~icons/ui/menu.svg'
 ---
 
 <Section>
 	<div class="container">
-		<h1>Тестовый текст</h1>
-		<Image src={Preview} alt="Обложка" loading="eager" />
-		<HeroAnimation />
+		<h1 class="text-h1">Тестирую <span class="text-h1 text-h1--accent">компоненты</span></h1>
+		<ButtonLink tier="accent">Привет</ButtonLink>
+		<ButtonLink tier="primary">Привет</ButtonLink>
+		<ButtonLink tier="primary" theme="light">Привет</ButtonLink>
+		<ButtonLink tier="secondary">
+			<MenuIcon class="icon icon--16" />
+			Привет
+		</ButtonLink>
+		<Field name="поле" id="12" placeholder="поле для ввода" />
+		<Field name="радио-кнопка" id="123" placeholder="радио кнопка" type="radio" />
+		<Field name="чекбокс" id="1234" placeholder="чекбокс" type="checkbox">Привет</Field>
 	</div>
 </Section>
 
 <style>
 	h1 {
-		font-size: 32px;
-		color: darkgoldenrod;
+		margin-bottom: 64px;
+		padding-top: 200px;
 	}
 </style>
