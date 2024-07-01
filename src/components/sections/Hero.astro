@@ -12,16 +12,11 @@ import MenuIcon from '~icons/ui/menu.svg'
 <Section>
 	<div class="container">
 		<h1 class="text-h1">Тестирую <span class="text-h1 text-h1--accent">компоненты</span></h1>
-		<ButtonLink tier="accent">Привет</ButtonLink>
-		<ButtonLink tier="primary">Привет</ButtonLink>
-		<ButtonLink tier="primary" theme="light">Привет</ButtonLink>
-		<ButtonLink tier="secondary">
-			<MenuIcon class="icon icon--16" />
-			Привет
-		</ButtonLink>
-		<Field name="поле" id="12" placeholder="поле для ввода" />
-		<Field name="радио-кнопка" id="123" placeholder="радио кнопка" type="radio" />
-		<Field name="чекбокс" id="1234" placeholder="чекбокс" type="checkbox">Привет</Field>
+		<Field name="поле" id="12" placeholder="Екатерина" label="Имя" />
+		<Field input="radio" name="радио-кнопка" id="123" label="радио кнопка" />
+		<Field input="radio" name="радио-кнопка" id="1235" label="радио кнопка 2" />
+		<Field input="checkbox-button" name="чекбокс" id="1234" label="чекбокс" />
+		<Field input="checkbox-button" name="чекбокс" id="12345" label="чекбокс 2" />
 	</div>
 </Section>
 

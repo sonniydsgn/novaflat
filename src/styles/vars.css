@@ -95,13 +95,14 @@
 	--clr-checkbox-button-border-selected: var(--clr-border-primary-200);
 	--clr-checkbox-button-text-default: var(--clr-text-primary-200);
 	--clr-checkbox-button-text-selected: var(--clr-text-primary-100);
-	--clr-field-atom: var(--clr-text-secondary);
 	--clr-field-bg: var(--clr-bg-primary-100);
 	--clr-field-border-default: var(--clr-border-primary-100);
 	--clr-field-border-errored: var(--clr-border-error);
 	--clr-field-border-focused: var(--clr-border-accent);
 	--clr-field-placeholder: var(--clr-text-tertiary);
 	--clr-field-text: var(--clr-text-primary-200);
+	--clr-field-text-atom: var(--clr-text-secondary);
+	--clr-field-text-errored: var(--clr-text-error);
 	--clr-radio-bg: var(--clr-bg-primary-100);
 	--clr-radio-border-default: var(--clr-border-primary-100);
 	--clr-radio-border-focused: var(--clr-border-accent);

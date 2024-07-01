@@ -131,7 +131,7 @@ declare module 'astro:content' {
   slug: "dogma";
   body: string;
   collection: "builders";
-  data: InferEntrySchema<"builders">
+  data: any
 } & { render(): Render[".md"] };
 };
 "mortgages": {
@@ -140,7 +140,7 @@ declare module 'astro:content' {
   slug: "family";
   body: string;
   collection: "mortgages";
-  data: InferEntrySchema<"mortgages">
+  data: any
 } & { render(): Render[".md"] };
 };
 "objects": {
@@ -149,77 +149,77 @@ declare module 'astro:content' {
   slug: "arhitector";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "dogma-park.md": {
 	id: "dogma-park.md";
   slug: "dogma-park";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "dostoyanie.md": {
 	id: "dostoyanie.md";
   slug: "dostoyanie";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "gubernskiy.md": {
 	id: "gubernskiy.md";
   slug: "gubernskiy";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "lubimovo.md": {
 	id: "lubimovo.md";
   slug: "lubimovo";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "park-pobedy.md": {
 	id: "park-pobedy.md";
   slug: "park-pobedy";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "patriki.md": {
 	id: "patriki.md";
   slug: "patriki";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "rekord.md": {
 	id: "rekord.md";
   slug: "rekord";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "rodnye-prostory.md": {
 	id: "rodnye-prostory.md";
   slug: "rodnye-prostory";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "samolet.md": {
 	id: "samolet.md";
   slug: "samolet";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 "skazka-grad.md": {
 	id: "skazka-grad.md";
   slug: "skazka-grad";
   body: string;
   collection: "objects";
-  data: InferEntrySchema<"objects">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -231,5 +231,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../src/content/config.js");
+	export type ContentConfig = never;
 }

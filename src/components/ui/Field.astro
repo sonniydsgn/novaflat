@@ -2,31 +2,43 @@
 import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'input'> {
-	name: 'string'
-	id: 'string'
-	class?: 'string'
-	placeholder?: 'string'
+	input?: 'field' | 'radio' | 'checkbox-button'
+	name: string
+	id: string
+	class?: string
+	label?: string
+	placeholder?: string
 }
 
-const { class: className, name, id, placeholder, type = 'text', ...rest } = Astro.props
+const { class: className, name, id, label, placeholder, input = 'field', type = 'text', ...rest } = Astro.props
 ---
 
 {
-	type === 'radio' ? (
-		<>
+	input === 'field' && (
+		<div class:list={['form-field', className]}>
+			<label for={id}>{label}</label>
+			<input class="input-reset" {placeholder} {type} {name} {id} data-validate-field={id} {...rest} />
+		</div>
+	)
+}
+
+{
+	input === 'checkbox-button' && (
+		// тут будут стили чекбокса
+		// https://codepen.io/attilahajzer/pen/WbbLpe
+		<div class:list={['form-checkbox-btn', className]}>
+			<input class="visually-hidden" type="checkbox" {name} {id} data-validate-field={id} {...rest} />
+			<label for={id}>{label}</label>
+		</div>
+	)
+}
+
+{
+	input === 'radio' && (
+		<div class:list={['form-control', className]}>
 			<input class="visually-hidden" type="radio" {name} {id} data-validate-field={id} {...rest} />
-			<span class="form-field__text">{placeholder}</span>
-		</>
-	) : (
-		<input
-			class:list={['input-reset', className]}
-			{placeholder}
-			{type}
-			{name}
-			{id}
-			data-validate-field={id}
-			{...rest}
-		/>
+			<label for={id}>{label}</label>
+		</div>
 	)
 }
 
@@ -35,7 +47,8 @@ const { class: className, name, id, placeholder, type = 'text', ...rest } = Astr
 		appearance: none;
 		border: none;
 		border-radius: 0;
-		background-color: #fff;
+		font-family: var(--ff-primary);
+		background-color: var(--clr-white);
 
 		&::-webkit-search-decoration,
 		&::-webkit-search-cancel-button,
@@ -43,116 +56,157 @@ const { class: className, name, id, placeholder, type = 'text', ...rest } = Astr
 		&::-webkit-search-results-decoration {
 			display: none;
 		}
-	}
 
-	.form-field {
-		position: relative;
-		display: grid;
-		align-items: center;
-		row-gap: 4px;
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			margin: 0;
+		}
 
-		input,
-		textarea {
-			width: 100%;
-
-			&::placeholder {
-				color: var(--clr-text);
-				opacity: 0.7;
-			}
+		&[type='number'] {
+			appearance: textfield;
 		}
 	}
 
 	/* поля ввода */
-	.form-field__input {
-		padding: 18px 20px 18px 60px;
-	}
+	.form-field {
+		display: grid;
+		font-weight: 500;
+		font-size: var(--font-sm);
+		line-height: var(--lh-primary);
+		color: var(--clr-text-primary-200);
+		row-gap: 8px;
 
-	.form-field__textarea {
-		padding: 18px 20px;
-		min-height: 100px;
-		resize: none;
-	}
-
-	.form-field__input,
-	.form-field__textarea {
-		border: 1px solid transparent;
-		border-radius: var(--br-sm);
-		font-weight: 400;
-		font-size: var(--font-md);
-		line-height: var(--lh-sm);
-		color: var(--clr-text);
-		background: var(--clr-gray-100);
-		transition: border-color var(--tr-primary);
-
-		&:not(:disabled):hover,
-		&:not(:disabled):focus {
-			border-color: var(--clr-gray-30);
-		}
-
-		&:disabled {
-			cursor: not-allowed;
-		}
-
-		@media (width <= 768) {
+		input {
+			border: 1px solid var(--clr-field-border-default);
+			border-radius: 0;
+			width: 100%;
+			font-weight: 400;
 			font-size: var(--font-primary);
+			line-height: var(--lh-primary);
+			color: var(--clr-field-text);
+			background-color: var(--clr-field-bg);
+			transition: border-color var(--tr-primary);
+			padding-block: 20px;
+			padding-inline: 24px;
+
+			&::placeholder {
+				color: var(--clr-field-placeholder);
+			}
+
+			&:focus {
+				outline: none;
+				border-color: var(--clr-field-border-focused);
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+			}
 		}
 	}
 
-	/* радио-кнопка */
-	.form-field--radio {
-		input:checked + .form-field__text::after {
+	.form-field__error {
+		margin-top: -4px;
+		font-weight: 400;
+		color: var(--clr-field-text-errored);
+	}
+
+	/* контролы */
+	.form-control {
+		display: flex;
+
+		input:checked + label::after {
 			opacity: 1;
 		}
 
-		input:checked + .form-field__text::before {
-			border-color: var(--clr-primary);
+		input:checked + label::before {
+			border-color: var(--clr-radio-border-focused);
 		}
 
-		.form-field__text {
+		input:focus-visible + label::before {
+			border-color: var(--clr-radio-border-focused);
+		}
+
+		input:checked:focus-visible + label::before {
+			outline: 1px solid black;
+			border-color: var(--clr-radio-border-default);
+		}
+
+		label {
 			position: relative;
 			display: flex;
 			align-items: center;
-			cursor: default;
+			font-weight: 400;
+			font-size: var(--font-primary);
+			line-height: var(--lh-primary);
+			color: var(--clr-radio-text);
+			cursor: pointer;
 
 			&::before {
 				content: '';
+				display: flex;
 				margin-right: 12px;
-				border: 1px solid var(--clr-gray-30);
+				border: 1px solid var(--clr-radio-border-default);
 				border-radius: 100%;
-				width: 22px;
-				height: 22px;
-				background-color: var(--clr-white);
+				width: 24px;
+				background-color: var(--clr-radio-bg);
+				transition: border-color var(--tr-primary);
+				aspect-ratio: 1;
 			}
 
 			&::after {
 				content: '';
 				position: absolute;
-				left: 4px;
-				border-radius: 100%;
-				width: 14px;
-				height: 14px;
-				background-color: var(--clr-primary);
+				left: 8px;
+				width: 8px;
+				background-color: var(--clr-radio-border-focused);
 				opacity: 0;
+				aspect-ratio: 1;
 			}
 		}
 	}
 
-	/* остальное */
-	.form-field__text {
-		font-weight: 400;
-		font-size: var(--font-primary);
-		line-height: var(--lh-sm);
-		color: var(--clr-text);
-	}
+	/* чек-бокс кнопка */
+	.form-checkbox-btn {
+		display: flex;
 
-	.form-field__icon {
-		position: absolute;
-		left: 20px;
-		grid-row: 1 / 2;
-		color: var(--clr-gray-10);
-	}
+		input:checked + label {
+			border-color: var(--clr-checkbox-button-border-selected);
+			border-radius: 0;
+			font-weight: 500;
+			color: var(--clr-checkbox-button-text-selected);
+			background-color: var(--clr-checkbox-button-border-selected);
+		}
 
-	.form-field__error {
-		grid-row: 2 / 3;
+		input:focus-visible + label {
+			border-color: var(--clr-checkbox-button-border-focused);
+		}
+
+		input:checked:focus-visible + label {
+			outline: 2px solid black;
+			border-color: transparent;
+		}
+
+		label {
+			display: flex;
+			justify-content: center;
+			border: 1px solid var(--clr-checkbox-button-border-default);
+			border-radius: var(--br-primary);
+			font-weight: 400;
+			font-size: var(--font-primary);
+			line-height: var(--lh-primary);
+			text-align: center;
+			color: var(--clr-checkbox-button-text-default);
+			background-color: var(--clr-checkbox-button-bg-default);
+			transition:
+				border-color var(--tr-primary),
+				background-color var(--tr-primary),
+				border-radius var(--tr-primary),
+				color var(--tr-primary);
+			cursor: pointer;
+			user-select: none;
+			padding-block: 20px;
+			padding-inline: 24px;
+		}
 	}
 </style>
