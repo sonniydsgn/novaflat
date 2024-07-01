@@ -4,9 +4,10 @@
 	"version": "1.0.0",
 	"browserslist": {
 		"production": [
-			"chrome >= 87",
-			"safari >= 14.1",
-			"firefox >= 98"
+			"Chrome >= 109",
+			"Edge >= 109",
+			"Firefox >= 115",
+			"Safari >= 15.4"
 		],
 		"development": [
 			"last 1 chrome version",
@@ -40,6 +41,8 @@
 		"eslint-plugin-astro": "^1.2.2",
 		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-simple-import-sort": "^12.1.0",
+		"inputmask": "^5.0.9",
+		"just-validate": "^4.3.0",
 		"postcss-html": "^1.7.0",
 		"prettier": "^3.3.2",
 		"prettier-plugin-astro": "^0.13.0",
